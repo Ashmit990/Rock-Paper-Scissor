@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock-Paper-Scissor By Ashmit Dahal</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+  <div class="container">
+    <h1 class="title">Rock-Paper-Scissor</h1>
+    <div class="figure-container">
+      <div class="player">
+        <img class="person" src="Paper.jpeg" alt="">
+      </div>
+      <h2 class="vs">VS</h2>
+      <div class="ai">
+        <img class="machine" src="Rock.jpeg" alt="">
+      </div>
+    </div>
+    <div class="buttons-container">
+      <div class="you">
+        <h3>You:</h3>
+        <select name="" id="selecting">
+          <option  value="Rock">Rock</option>
+          <option value="Paper">Paper</option>
+          <option value="Scissor">Scissor</option>
+        </select>
+      </div>
+      <div class="sturt">
+        <button class="start">Start Game</button>
+      </div>
+      
+      <h3 class="comp">AI</h3>
+    </div>
+    <div class="popup hidden">
+      <div class="popup-content">
+          
+          <p class="result"></p>
+          <h2 class="win-lose"></h2>
+          <button class="ok-btn">OK</button>
+      </div>
+  </div>
+  <div class="overlay hidden"></div>
+  </div>
+<script src="script.js"></script>  
+</body>
+</html>

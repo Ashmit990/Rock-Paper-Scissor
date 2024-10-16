@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Permanent Marker',cursive;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+   
+    background-color: #080014;
+}
+.container{
+    width: 1000px;
+    height: 500px;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(244, 244, 244, 0.3), 
+    0 -4px 10px rgba(244, 244, 244, 0.3),
+    4px 0 10px rgba(244, 244, 244, 0.3), 
+    -4px 0 10px rgba(244, 244, 244, 0.3);
+    background-color: black;
+    margin: 10px auto;
+    padding: 10px;
+    
+}
+.container .title{
+    color: lightgreen;
+    text-align: center;
+    font-size: 45px;
+    font-weight: 600;
+}
+.container .figure-container{
+    width: 100%;
+    height: 300px;
+    
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+.figure-container .player{
+    width: 20%;
+    height: 225px;
+    
+    transform: rotate(110deg);
+}
+.player img{
+    height: 100%;
+    width: 100%;
+    
+}
+.figure-container .vs{
+    color: lightsalmon;
+    font-size: 70px;
+
+}
+.figure-container .ai{
+    width: 20%;
+    height: 225px;
+    
+    transform: rotate(225deg);
+}
+.ai img{
+    height: 100%;
+    width: 100%;
+    
+}
+.container .buttons-container{
+    width: 100%;
+    height: 100px;
+    
+    display: flex;
+    justify-content: space-between;
+   padding-top: 15px;
+   padding-bottom: 15px;
+   padding-left: 15px;
+   padding-right: 150px;
+   margin-top: -31px;
+}
+.buttons-container .you{
+    width: 210px;
+    height: 60px;
+    border: 0.5px solid white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #080014;
+    padding: 5px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+.buttons-container .you:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 9px rgba(244, 244, 244, 0.3), 
+                0 -3px 9px rgba(244, 244, 244, 0.3),
+                3px 0 9px rgba(244, 244, 244, 0.3), 
+                -3px 0 9px rgba(244, 244, 244, 0.3);
+}
+
+.you h3{
+    color: lime;
+    font-size: 35px;
+}
+.you select{
+    background-color: #080014;
+    color: aqua;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    height: 95%;
+    cursor: pointer;
+   
+}
+.buttons-container .start{
+    height: 60px;
+    width: 190px;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: #080014;
+    color: rgb(241, 182, 221);
+    padding: 5px;
+    cursor: pointer;
+    border: 0.5px solid white;
+    border-radius: 15px;
+    outline: none;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    
+}
+.buttons-container .start:hover{
+    transform: scale(1.05);
+    box-shadow: 0 3px 9px rgba(244, 244, 244, 0.3), 
+                0 -3px 9px rgba(244, 244, 244, 0.3),
+                3px 0 9px rgba(244, 244, 244, 0.3), 
+                -3px 0 9px rgba(244, 244, 244, 0.3);
+}
+.buttons-container .comp{
+    color: rgb(251, 199, 102);
+    font-size: 30px;
+    cursor: pointer;
+}
+.container .popup{
+    width: 400px;
+    height: 250px;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:#080014 ;
+    padding: 5px;
+    box-shadow: 0 3px 9px rgba(244, 244, 244, 0.3), 
+                0 -3px 9px rgba(244, 244, 244, 0.3),
+                3px 0 9px rgba(244, 244, 244, 0.3), 
+                -3px 0 9px rgba(244, 244, 244, 0.3);
+    
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 5; 
+    display: none; 
+}
+
+.overlay.visible {
+    display: block; 
+}
+
+.popup .result{
+    color: #fff;
+    text-align: center;
+    font-size: 45px;
+}
+.popup .win-lose{
+    font-size: 46px;
+    color: rgb(250, 225, 0);
+    text-align: center;
+    margin-top: 15px;
+}
+.popup .ok-btn{
+    margin-left: 36%;
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    font-size: 35px;
+    border: 1px solid white;
+    border-radius: 15px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+.popup .ok-btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 3px 9px rgba(244, 244, 244, 0.3), 
+                0 -3px 9px rgba(244, 244, 244, 0.3),
+                3px 0 9px rgba(244, 244, 244, 0.3), 
+                -3px 0 9px rgba(244, 244, 244, 0.3);
+                background-color: black;
+}
+.hidden{
+    display: none;
+}
+@media (max-width:700px) {
+    .container{
+        width: 310px;
+        height: 610px;
+        
+    }
+    .container .title{
+        font-size: 30px;
+    }
+    .container .figure-container{
+        /*border: 2px solid white;*/
+        height: 450px;
+        width: 100%;
+        flex-direction: column;
+    }
+    .figure-container .player{
+        transform: none;
+        width: 100px;
+        height: 120px;
+    }
+    .figure-container .vs{
+        font-size: 30px;
+    }
+    .figure-container .ai{
+        transform: none;
+        width: 100px;
+        height: 120px;
+    }
+    .comp{
+        display: none;
+    }
+    .buttons-container{
+        /*border: 2px solid white;*/
+        margin-top: 0px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .buttons-container .you{
+        width: 170px;
+        height: 50px;
+        
+    }
+    .you h3{
+        font-size: 18px;
+    }
+    .buttons-container select{
+        font-size: 18px;
+    }
+    .buttons-container .start{
+        width: 115px;
+        height: 50px;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    .buttons-container .sturt{
+        /*border: 2px solid white;*/
+        width: 100px;
+    }
+  
+    
+}
+
+    
+
+
+
+
+
+
